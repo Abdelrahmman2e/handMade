@@ -8,6 +8,13 @@ const {
   updateCategory,
 } = require("../controller/categoryController");
 
+const {
+  createCategoryValidator,
+  deleteCategoryValidator,
+  updateCategoryValidator,
+  getCategoryValidator,
+} = require("../utils/validators/categoryValidator");
+
 const { protect, restrictTo } = require("../controller/authController");
 
 const subCategoryRouter = require("./SubCategory");
@@ -18,8 +25,13 @@ router.use("/:categoryId/subCategories", subCategoryRouter);
 
 router
   .route("/")
-  .post(createCategoryValidator, createCategory)
-  .get(protect, getCategories);
+  .get(getCategories)
+  .post(
+    createCategoryValidator,
+    protect,
+    restrictTo("admin", "artisan"),
+    createCategory
+  );
 router
   .route("/:id")
   .get(getCategoryValidator, getCategory)
@@ -29,6 +41,11 @@ router
     restrictTo("admin", "artisan"),
     deleteCategory
   )
-  .patch(updateCategoryValidator, updateCategory);
+  .patch(
+    updateCategoryValidator,
+    protect,
+    restrictTo("admin", "artisan"),
+    updateCategory
+  );
 
 module.exports = router;

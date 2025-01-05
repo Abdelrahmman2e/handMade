@@ -1,75 +1,58 @@
 const User = require("../models/userModel");
+const slugify = require("slugify");
 const asyncHandler = require("express-async-handler");
-const AppError = require("../utils/AppError");
-const ApiFeatures = require("../utils/ApiFeatures");
+const ApiError = require("../utils/AppError");
+const {
+  deleteOne,
+  getAll,
+  getOne,
+  updateOne,
+  createOne,
+} = require("./handlersFactory");
 
-exports.getUsers = asyncHandler(async (req, res, nxt) => {
-  const apiFeature = new ApiFeatures(User.find(), req.query)
-    .filter()
-    .fieldsLimit()
-    .search("User")
-    .sort();
+exports.getMe = (req, res, nxt) => {
+  req.params.id = req.user.id;
+  nxt();
+};
 
-  const countDocuments = await User.countDocuments();
+exports.getUsers = getAll(User);
 
-  // Apply pagination
-  await apiFeature.paginate(countDocuments);
-  //Execute Query
-  const { mongooseQuery, paginationResult } = apiFeature;
-  const users = await mongooseQuery;
+exports.createUser = createOne(User);
 
-  res.status(200).json({
-    status: "Success",
-    results: users.length,
-    paginationResult,
-    data: users,
-  });
-});
+exports.getUser = getOne(User);
 
-exports.createUser = asyncHandler(async (req, res, nxt) => {
-  const newUser = await User.create(req.body);
-  res.status(201).json({
-    status: "Success",
-    data: {
-      newUser,
+// @desc    Update specific User
+// @route   PATCH /api/v1/users/:id
+// @access  Private/Admin
+
+exports.updateUser = updateOne(User);
+
+// @desc    Delete specific User
+// @route   DELETE /api/v1/users/:id
+// @access  Private/Admin
+
+exports.deleteUser = deleteOne(User);
+
+exports.updateMe = asyncHandler(async (req, res, next) => {
+  const { name, Phone, email, profile_picture, role, birthDate } = req.body;
+  if (name) req.body.slug = slugify(name);
+  const doc = await User.findByIdAndUpdate(
+    req.user.id,
+    {
+      name,
+      Phone,
+      email,
+      profile_picture,
+      birthDate,
+      role,
     },
-  });
-});
+    {
+      new: true,
+    }
+  );
 
-exports.getUser = asyncHandler(async (req, res, nxt) => {
-  const { id } = req.params;
-
-  const user = await User.findById(id);
-  if (!user) {
-    return nxt(new AppError(`No user found with that ID :${id}`, 404));
+  if (!doc) {
+    return next(new ApiError(`No document for this id ${req.params.id}`, 404));
   }
-  res.status(200).json({
-    status: "Success",
-    data: {
-      user,
-    },
-  });
-});
-
-exports.updateUser = asyncHandler(async (req, res, nxt) => {
-  const { id } = req.params;
-  const user = await User.findByIdAndUpdate(id, req.body, {
-    new: true,
-  });
-
-  if (!user) {
-    return nxt(new AppError(`No User found with that ID :${id}`, 404));
-  }
-
-  res.status(200).json({ status: "Success", data: { user } });
-});
-exports.deleteUser = asyncHandler(async (req, res, nxt) => {
-  const { id } = req.params;
-  const user = await User.findByIdAndDelete(id);
-
-  if (!user) {
-    return nxt(new AppError(`No user found with that ID :${id}`, 404));
-  }
-
-  res.status(204).send();
+  res.status(200).json({ data: doc });
 });

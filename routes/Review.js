@@ -21,10 +21,11 @@ const { protect, restrictTo } = require("../controller/authController");
 
 const router = express.Router({ mergeParams: true });
 
+router.use(protect);
+
 router
   .route("/")
   .post(
-    protect,
     restrictTo("user"),
     setProductAndUserIdToBody,
     createReviewValidator,
@@ -34,7 +35,17 @@ router
 router
   .route("/:id")
   .get(getReviewValidator, getReview)
-  .patch(updateReviewValidator, updateReview)
-  .delete(deleteReviewValidator, deleteReview);
+  .patch(
+    updateReviewValidator,
+    restrictTo("admin", "user"),
+    setProductAndUserIdToBody,
+    updateReview
+  )
+  .delete(
+    deleteReviewValidator,
+    restrictTo("admin", "user"),
+    setProductAndUserIdToBody,
+    deleteReview
+  );
 
 module.exports = router;

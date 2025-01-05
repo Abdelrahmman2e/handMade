@@ -16,11 +16,12 @@ const categorySchema = new mongoose.Schema(
     },
     image: String,
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
 module.exports = mongoose.model("Category", categorySchema);
-
 
 /*
 

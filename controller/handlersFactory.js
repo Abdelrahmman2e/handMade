@@ -2,12 +2,17 @@ const asyncHandler = require("express-async-handler");
 const AppError = require("../utils/AppError");
 const ApiFeatures = require("../utils/ApiFeatures");
 
-exports.getAll = (Model) => {
+exports.getAll = (Model, modelName = "") =>
   asyncHandler(async (req, res, nxt) => {
-    const apiFeature = new ApiFeatures(Model.find(), req.query)
+    let filter = {};
+    if (req.filterObj) {
+      filter = req.filterObj;
+    }
+    // const subCategories = await Subcategory.find(req.filterObj)
+    const apiFeature = new ApiFeatures(Model.find(filter), req.query)
       .filter()
       .fieldsLimit()
-      .search(`${Model}`)
+      .search(modelName)
       .sort();
 
     const countDocuments = await Model.countDocuments();
@@ -16,43 +21,41 @@ exports.getAll = (Model) => {
     await apiFeature.paginate(countDocuments);
     //Execute Query
     const { mongooseQuery, paginationResult } = apiFeature;
-    const docs = await mongooseQuery;
+    const doc = await mongooseQuery;
 
     res.status(200).json({
       status: "Success",
-      results: docs.length,
+      results: doc.length,
       paginationResult,
-      data: docs,
-    });
-  });
-};
-
-exports.createOne = (Model) => {
-  asyncHandler(async (req, res, nxt) => {
-    const doc = await Model.create(req.body);
-    res.status(201).json({
-      status: "Success",
       data: doc,
     });
   });
-};
 
-exports.getOne = (Model) => {
+exports.createOne = (Model) =>
+  asyncHandler(async (req, res, nxt) => {
+    const newDoc = await Model.create(req.body);
+    res.status(201).json({
+      status: "Success",
+      data: newDoc,
+    });
+  });
+
+exports.getOne = (Model, popOptions) =>
   asyncHandler(async (req, res, nxt) => {
     const { id } = req.params;
+    let query = Model.findById(id);
+    if (popOptions) query = query.populate(popOptions);
+    const doc = await query;
 
-    const document = await Model.findById(id);
-    if (!document) {
+    if (!doc) {
       return nxt(new AppError(`No document found with that ID :${id}`, 404));
     }
     res.status(200).json({
       status: "Success",
-      data: document,
+      data: doc,
     });
   });
-};
-
-exports.updateOne = (Model) => {
+exports.updateOne = (Model) =>
   asyncHandler(async (req, res, nxt) => {
     const { id } = req.params;
     const document = await Model.findByIdAndUpdate(id, req.body, {
@@ -65,9 +68,8 @@ exports.updateOne = (Model) => {
 
     res.status(200).json({ status: "Success", data: document });
   });
-};
 
-exports.deleteOne = (Model) => {
+exports.deleteOne = (Model) =>
   asyncHandler(async (req, res, nxt) => {
     const { id } = req.params;
     const document = await Model.findByIdAndDelete(id);
@@ -77,4 +79,3 @@ exports.deleteOne = (Model) => {
     }
     res.status(204).send();
   });
-};

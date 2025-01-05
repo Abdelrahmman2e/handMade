@@ -79,33 +79,33 @@ const productSchema = new mongoose.Schema(
       default: 0,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
 );
+
+productSchema.index({ price: 1, ratingsAverage: -1 });
+productSchema.index({ slug: 1 });
+
+productSchema.virtual("reviews", {
+  ref: "Review",
+  foreignField: "product",
+  localField: "_id",
+});
+
+productSchema.pre(/^find/, function (nxt) {
+  this.populate({
+    path: "category",
+    select: "name -_id",
+  });
+  nxt();
+});
 
 module.exports = mongoose.model("Product", productSchema);
 
 /**
-const newProduct = new Product({
-  name: "Handmade Pottery Vase",
-  description: "A beautifully crafted vase made from natural clay.",
-  category: "Home Decor",
-  tags: ["handmade", "vase", "pottery"],
-  price: 45.99,
-  currency: "EGP", // Using "EGP" as the currency
-  stockQuantity: 10,
-  materials: ["clay", "natural glaze"],
-  dimensions: { height: "30 cm", diameter: "15 cm" },
-  weight: 1.5,
-  images: ["https://example.com/images/vase.jpg"],
-});
-
-newProduct.save()
-  .then(product => console.log("Product saved:", product))
-  .catch(err => console.error("Error saving product:", err));
-
-
-Tags: Keywords for easier search and categorization.
-
 2. Seller
  */
 /**

@@ -23,16 +23,28 @@ const router = express.Router({ mergeParams: true });
 
 router
   .route("/")
-  .post(setCategoryIdToBody, createSubCategoryValidator, createSubCategory)
+  .post(
+    setCategoryIdToBody,
+    createSubCategoryValidator,
+    protect,
+    restrictTo("admin", "artisan"),
+    createSubCategory
+  )
   .get(createFilterObj, getSubCategories);
 router
   .route("/:id")
   .get(getSubCategoryValidator, getSubCategory)
   .delete(
-    restrictTo("admin", "artisan"),
     deleteSubCategoryValidator,
+    protect,
+    restrictTo("admin", "artisan"),
     deleteSubCategory
   )
-  .patch(updateSUbCategoryValidator, updateSubCategory);
+  .patch(
+    updateSUbCategoryValidator,
+    protect,
+    restrictTo("admin", "artisan"),
+    updateSubCategory
+  );
 
 module.exports = router;

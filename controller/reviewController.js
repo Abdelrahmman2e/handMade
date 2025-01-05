@@ -1,6 +1,12 @@
 const Review = require("../models/reviewModel");
-const asyncHandler = require("express-async-handler");
-const AppError = require("../utils/AppError");
+
+const {
+  deleteOne,
+  getAll,
+  getOne,
+  updateOne,
+  createOne,
+} = require("./handlersFactory");
 
 exports.setProductAndUserIdToBody = (req, res, nxt) => {
   if (!req.body.product) req.body.product = req.params.productId;
@@ -9,13 +15,6 @@ exports.setProductAndUserIdToBody = (req, res, nxt) => {
   nxt();
 };
 
-exports.createReview = asyncHandler(async (req, res, nxt) => {
-  const newReview = await Review.create(req.body);
-  res.status(201).json({
-    data: newReview,
-  });
-});
-
 exports.createFilterObj = (req, res, nxt) => {
   let filterObj = {};
   if (req.params.productId) filterObj = { product: req.params.productId };
@@ -23,48 +22,20 @@ exports.createFilterObj = (req, res, nxt) => {
   nxt();
 };
 
-exports.getReviews = asyncHandler(async (req, res, nxt) => {
-  const reviews = await Review.find(req.filterObj);
+exports.createReview = createOne(Review);
 
-  res.status(200).json({
-    Results: reviews.length,
-    data: reviews,
-  });
-});
+exports.getReviews = getAll(Review);
 
-exports.getReview = asyncHandler(async (req, res, nxt) => {
-  const { id } = req.params;
-  const review = await Review.findById(id);
+exports.getReview = getOne(Review);
 
-  if (!review) {
-    return nxt(new AppError(`No review with this Id: ${id}`, 404));
-  }
-  res.status(200).json({ status: "Success", data: review });
-});
+// @desc    Update specific Review
+// @route   PATCH /api/v1/reviews/:id
+// @access  Private/Admin-Artisan
 
-exports.updateReview = asyncHandler(async (req, res, nxt) => {
-  const { id } = req.params;
+exports.updateReview = updateOne(Review);
 
-  const review = await Review.findByIdAndUpdate(
-    id,
-    {
-      review: req.body.review,
-      rating: req.body.rating,
-    },
-    { new: true }
-  );
+// @desc    Delete specific Review
+// @route   DELETE /api/v1/reviews/:id
+// @access  Private/Admin
 
-  if (!review) {
-    return nxt(new AppError(`No review with this Id: ${id}`, 404));
-  }
-  res.status(200).json({ status: "Success", data: review });
-});
-
-exports.deleteReview = asyncHandler(async (req, res, nxt) => {
-  const { id } = req.params;
-  const review = await Review.findByIdAndDelete(id);
-  if (!review) {
-    return nxt(new AppError(`No review with this Id: ${id}`, 404));
-  }
-  res.status(204).send();
-});
+exports.deleteReview = deleteOne(Review);

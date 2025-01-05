@@ -21,16 +21,25 @@ exports.createReviewValidator = [
     .custom((val, { req }) =>
       Review.findOne({ user: req.user.id, product: req.body.product }).then(
         (review) => {
-          console.log(req.body.product);
-          console.log(review);
           if (review) {
-            Promise.reject(
+            return Promise.reject(
               new Error(`You already created a review before..!!`)
             );
           }
         }
       )
     ),
+  // .custom((val, { req }) =>
+  //   Review.findOne({ user: req.user.id, product: req.body.product }).then(
+  //     (review) => {
+  //       if (review) {
+  //         Promise.reject(
+  //           new Error(`You already created a review before..!!`)
+  //         );
+  //       }
+  //     }
+  //   )
+  // )
   validatorMW,
 ];
 

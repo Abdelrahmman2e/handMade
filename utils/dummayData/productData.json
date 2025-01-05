@@ -1,407 +1,239 @@
 [
     {
-        "title": "Handwoven Basket",
-        "slug": "handwoven-basket",
-        "description": "A beautifully crafted eco-friendly handwoven basket made from natural materials.",
+        "title": "Wooden Bowl",
+        "slug": "wooden-bowl",
+        "description": "A beautifully crafted wooden bowl, perfect for home decor or serving. Made from eco-friendly materials and hand-carved with attention to detail.",
         "quantity": 50,
         "sold": 10,
-        "price": 15.0,
-        "priceAfterDiscount": 12.0,
+        "price": 35.99,
+        "priceAfterDiscount": 30.99,
         "colors": [
             "brown",
-            "beige"
-        ],
-        "imageCover": "https://example.com/images/handwoven-basket.jpg",
-        "images": [
-            "https://example.com/images/handwoven-basket-1.jpg",
-            "https://example.com/images/handwoven-basket-2.jpg"
-        ],
-        "category": "64b62a539b5c1f0023c56789",
-        "subcategories": [
-            "64b62a539b5c1f0023c5678a"
-        ],
-        "currency": "USD",
-        "materials": [
-            "straw",
-            "cotton"
-        ],
-        "weight": 1.2,
-        "ratingsAverage": 4.7,
-        "ratingsQuantity": 20
-    },
-    {
-        "title": "Ceramic Mug",
-        "slug": "ceramic-mug",
-        "description": "A hand-painted ceramic mug perfect for coffee lovers.",
-        "quantity": 80,
-        "sold": 25,
-        "price": 12.0,
-        "priceAfterDiscount": 10.5,
-        "colors": [
-            "blue",
-            "white"
-        ],
-        "imageCover": "https://example.com/images/ceramic-mug.jpg",
-        "images": [
-            "https://example.com/images/ceramic-mug-1.jpg"
-        ],
-        "category": "64b62a539b5c1f0023c56789",
-        "subcategories": [
-            "64b62a539b5c1f0023c5678b"
-        ],
-        "currency": "EUR",
-        "materials": [
-            "clay",
-            "glaze"
-        ],
-        "weight": 0.8,
-        "ratingsAverage": 4.6,
-        "ratingsQuantity": 15
-    },
-    {
-        "title": "Knitted Scarf",
-        "slug": "knitted-scarf",
-        "description": "A warm and cozy knitted scarf made of 100% wool.",
-        "quantity": 40,
-        "sold": 5,
-        "price": 25.0,
-        "priceAfterDiscount": 20.0,
-        "colors": [
-            "red",
-            "grey"
-        ],
-        "imageCover": "https://example.com/images/knitted-scarf.jpg",
-        "images": [
-            "https://example.com/images/knitted-scarf-1.jpg"
-        ],
-        "category": "64b62a539b5c1f0023c5678c",
-        "subcategories": [],
-        "currency": "EGP",
-        "materials": [
-            "wool"
-        ],
-        "weight": 0.5,
-        "ratingsAverage": 4.8,
-        "ratingsQuantity": 10
-    },
-    {
-        "title": "Wooden Photo Frame",
-        "slug": "wooden-photo-frame",
-        "description": "A rustic wooden photo frame crafted from high-quality oak.",
-        "quantity": 60,
-        "sold": 20,
-        "price": 20.0,
-        "colors": [
             "natural wood"
         ],
-        "imageCover": "https://example.com/images/wooden-photo-frame.jpg",
-        "images": [],
-        "category": "64b62a539b5c1f0023c5678d",
-        "subcategories": [],
-        "currency": "USD",
-        "materials": [
-            "oak"
-        ],
-        "weight": 0.7,
-        "ratingsAverage": 4.5,
-        "ratingsQuantity": 25
-    },
-    {
-        "title": "Soy Candle Set",
-        "slug": "soy-candle-set",
-        "description": "A set of 3 aromatherapy soy candles for relaxation.",
-        "quantity": 35,
-        "sold": 15,
-        "price": 18.0,
-        "colors": [
-            "white"
-        ],
-        "imageCover": "https://example.com/images/soy-candle-set.jpg",
-        "images": [],
-        "category": "64b62a539b5c1f0023c5678e",
-        "subcategories": [],
-        "currency": "EGP",
-        "materials": [
-            "soy wax",
-            "essential oils"
-        ],
-        "weight": 0.9,
-        "ratingsAverage": 4.9,
-        "ratingsQuantity": 30
-    },
-    {
-        "title": "Beaded Bracelet",
-        "slug": "beaded-bracelet",
-        "description": "A colorful handmade beaded bracelet perfect for casual wear.",
-        "quantity": 100,
-        "sold": 35,
-        "price": 10.0,
-        "priceAfterDiscount": 8.0,
-        "colors": [
-            "multicolor",
-            "black"
-        ],
-        "imageCover": "https://example.com/images/beaded-bracelet.jpg",
+        "imageCover": "https://example.com/images/wooden_bowl_1.jpg",
         "images": [
-            "https://example.com/images/beaded-bracelet-1.jpg"
+            "https://example.com/images/wooden_bowl_1.jpg",
+            "https://example.com/images/wooden_bowl_2.jpg"
         ],
-        "category": "64b62a539b5c1f0023c5678f",
-        "subcategories": [],
+        "category": "6749de8cd1f5d0f1c9518a94",
+        "subcategories": [
+            "6749df7f318b6f2001861157"
+        ],
         "currency": "USD",
         "materials": [
-            "glass beads",
-            "elastic"
+            "wood",
+            "eco-friendly"
         ],
-        "weight": 0.1,
-        "ratingsAverage": 4.4,
-        "ratingsQuantity": 18
+        "weight": 0.5,
+        "ratingsAverage": 4.5,
+        "ratingsQuantity": 12
     },
     {
         "title": "Leather Wallet",
         "slug": "leather-wallet",
-        "description": "A durable handmade leather wallet with multiple compartments.",
-        "quantity": 25,
-        "sold": 10,
-        "price": 30.0,
-        "priceAfterDiscount": 25.0,
+        "description": "A sleek and durable leather wallet made with fine craftsmanship. Ideal for both men and women, designed to hold cards and cash neatly.",
+        "quantity": 120,
+        "sold": 45,
+        "price": 45.50,
+        "priceAfterDiscount": 40.00,
         "colors": [
-            "brown",
-            "black"
+            "black",
+            "brown"
         ],
-        "imageCover": "https://example.com/images/leather-wallet.jpg",
+        "imageCover": "https://example.com/images/leather_wallet_1.jpg",
         "images": [
-            "https://example.com/images/leather-wallet-1.jpg"
+            "https://example.com/images/leather_wallet_1.jpg",
+            "https://example.com/images/leather_wallet_2.jpg"
         ],
-        "category": "64b62a539b5c1f0023c56790",
-        "subcategories": [],
-        "currency": "EUR",
+        "category": "6749de8cd1f5d0f1c9518a94",
+        "subcategories": [
+            "6749df7f318b6f2001861157"
+        ],
+        "currency": "USD",
         "materials": [
-            "genuine leather"
+            "leather"
+        ],
+        "weight": 0.2,
+        "ratingsAverage": 4.7,
+        "ratingsQuantity": 32
+    },
+    {
+        "title": "Ceramic Vase",
+        "slug": "ceramic-vase",
+        "description": "This hand-painted ceramic vase is a unique addition to any home. With intricate patterns and a sturdy build, it's perfect for flowers or simply as decor.",
+        "quantity": 30,
+        "sold": 12,
+        "price": 29.99,
+        "priceAfterDiscount": 25.00,
+        "colors": [
+            "white",
+            "blue"
+        ],
+        "imageCover": "https://example.com/images/ceramic_vase_1.jpg",
+        "images": [
+            "https://example.com/images/ceramic_vase_1.jpg",
+            "https://example.com/images/ceramic_vase_2.jpg"
+        ],
+        "category": "6749de8cd1f5d0f1c9518a94",
+        "subcategories": [
+            "6749df7f318b6f2001861157"
+        ],
+        "currency": "USD",
+        "materials": [
+            "ceramic"
+        ],
+        "weight": 1.2,
+        "ratingsAverage": 4.8,
+        "ratingsQuantity": 8
+    },
+    {
+        "title": "Knitted Scarf",
+        "slug": "knitted-scarf",
+        "description": "Soft, hand-knitted wool scarf to keep you warm during the cold weather. Available in multiple colors.",
+        "quantity": 75,
+        "sold": 25,
+        "price": 18.75,
+        "priceAfterDiscount": 16.50,
+        "colors": [
+            "red",
+            "blue",
+            "green"
+        ],
+        "imageCover": "https://example.com/images/knitted_scarf_1.jpg",
+        "images": [
+            "https://example.com/images/knitted_scarf_1.jpg",
+            "https://example.com/images/knitted_scarf_2.jpg"
+        ],
+        "category": "6749de8cd1f5d0f1c9518a94",
+        "subcategories": [
+            "6749df7f318b6f2001861157"
+        ],
+        "currency": "USD",
+        "materials": [
+            "wool"
         ],
         "weight": 0.3,
         "ratingsAverage": 4.3,
-        "ratingsQuantity": 22
+        "ratingsQuantity": 18
     },
     {
-        "title": "Embroidered Pillow",
-        "slug": "embroidered-pillow",
-        "description": "A decorative pillow with intricate floral embroidery.",
-        "quantity": 45,
-        "sold": 12,
-        "price": 22.0,
-        "priceAfterDiscount": 18.0,
+        "title": "Silver Earrings",
+        "slug": "silver-earrings",
+        "description": "Elegant silver earrings with a unique design. Perfect for casual wear or special occasions.",
+        "quantity": 200,
+        "sold": 80,
+        "price": 22.99,
+        "priceAfterDiscount": 19.99,
         "colors": [
-            "white",
-            "blue"
+            "silver"
         ],
-        "imageCover": "https://example.com/images/embroidered-pillow.jpg",
+        "imageCover": "https://example.com/images/silver_earrings_1.jpg",
         "images": [
-            "https://example.com/images/embroidered-pillow-1.jpg"
+            "https://example.com/images/silver_earrings_1.jpg",
+            "https://example.com/images/silver_earrings_2.jpg"
         ],
-        "category": "64b62a539b5c1f0023c56791",
-        "subcategories": [],
-        "currency": "EGP",
-        "materials": [
-            "cotton",
-            "thread"
+        "category": "6749de8cd1f5d0f1c9518a94",
+        "subcategories": [
+            "6749df7f318b6f2001861157"
         ],
-        "weight": 0.6,
-        "ratingsAverage": 4.7,
-        "ratingsQuantity": 16
-    },
-    {
-        "title": "Macramé Plant Hanger",
-        "slug": "macrame-plant-hanger",
-        "description": "A stylish macramé plant hanger made from jute rope.",
-        "quantity": 30,
-        "sold": 8,
-        "price": 25.0,
-        "colors": [
-            "natural"
-        ],
-        "imageCover": "https://example.com/images/macrame-plant-hanger.jpg",
-        "images": [
-            "https://example.com/images/macrame-plant-hanger-1.jpg"
-        ],
-        "category": "64b62a539b5c1f0023c56792",
-        "subcategories": [],
         "currency": "USD",
         "materials": [
-            "jute"
-        ],
-        "weight": 0.4,
-        "ratingsAverage": 4.6,
-        "ratingsQuantity": 12
-    },
-    {
-        "title": "Pendant Necklace",
-        "slug": "pendant-necklace",
-        "description": "A silver pendant necklace with a vibrant gemstone centerpiece.",
-        "quantity": 60,
-        "sold": 22,
-        "price": 20.0,
-        "priceAfterDiscount": 16.0,
-        "colors": [
-            "silver",
-            "blue"
-        ],
-        "imageCover": "https://example.com/images/pendant-necklace.jpg",
-        "images": [
-            "https://example.com/images/pendant-necklace-1.jpg"
-        ],
-        "category": "64b62a539b5c1f0023c56793",
-        "subcategories": [],
-        "currency": "EUR",
-        "materials": [
-            "silver",
-            "gemstone"
-        ],
-        "weight": 0.2,
-        "ratingsAverage": 4.5,
-        "ratingsQuantity": 30
-    },
-    {
-        "title": "Crochet Blanket",
-        "slug": "crochet-blanket",
-        "description": "A soft handmade crochet blanket for cozy evenings.",
-        "quantity": 15,
-        "sold": 5,
-        "price": 45.0,
-        "colors": [
-            "white",
-            "pink"
-        ],
-        "imageCover": "https://example.com/images/crochet-blanket.jpg",
-        "images": [
-            "https://example.com/images/crochet-blanket-1.jpg"
-        ],
-        "category": "64b62a539b5c1f0023c56794",
-        "subcategories": [],
-        "currency": "EGP",
-        "materials": [
-            "cotton yarn"
-        ],
-        "weight": 2.0,
-        "ratingsAverage": 4.9,
-        "ratingsQuantity": 40
-    },
-    {
-        "title": "Wooden Coasters",
-        "slug": "wooden-coasters",
-        "description": "A set of 4 handmade wooden coasters made from bamboo.",
-        "quantity": 80,
-        "sold": 35,
-        "price": 12.0,
-        "colors": [
-            "natural"
-        ],
-        "imageCover": "https://example.com/images/wooden-coasters.jpg",
-        "images": [
-            "https://example.com/images/wooden-coasters-1.jpg"
-        ],
-        "category": "64b62a539b5c1f0023c56795",
-        "subcategories": [],
-        "currency": "USD",
-        "materials": [
-            "bamboo"
-        ],
-        "weight": 0.5,
-        "ratingsAverage": 4.5,
-        "ratingsQuantity": 15
-    },
-    {
-        "title": "Soap Bar Set",
-        "slug": "soap-bar-set",
-        "description": "A set of 3 organic handmade soap bars in various scents.",
-        "quantity": 90,
-        "sold": 30,
-        "price": 10.0,
-        "colors": [
-            "white",
-            "green"
-        ],
-        "imageCover": "https://example.com/images/soap-bar-set.jpg",
-        "images": [],
-        "category": "64b62a539b5c1f0023c56796",
-        "subcategories": [],
-        "currency": "EGP",
-        "materials": [
-            "shea butter",
-            "essential oils"
-        ],
-        "weight": 0.7,
-        "ratingsAverage": 4.8,
-        "ratingsQuantity": 25
-    },
-    {
-        "title": "Canvas Painting",
-        "slug": "canvas-painting",
-        "description": "A stunning abstract painting on canvas for modern interiors.",
-        "quantity": 10,
-        "sold": 3,
-        "price": 50.0,
-        "colors": [
-            "multicolor"
-        ],
-        "imageCover": "https://example.com/images/canvas-painting.jpg",
-        "images": [],
-        "category": "64b62a539b5c1f0023c56797",
-        "subcategories": [],
-        "currency": "USD",
-        "materials": [
-            "canvas",
-            "acrylic paint"
-        ],
-        "weight": 1.5,
-        "ratingsAverage": 4.9,
-        "ratingsQuantity": 30
-    },
-    {
-        "title": "Handmade Earrings",
-        "slug": "handmade-earrings",
-        "description": "Lightweight handmade earrings in vibrant colors.",
-        "quantity": 70,
-        "sold": 20,
-        "price": 15.0,
-        "colors": [
-            "red",
-            "blue"
-        ],
-        "imageCover": "https://example.com/images/handmade-earrings.jpg",
-        "images": [],
-        "category": "64b62a539b5c1f0023c56798",
-        "subcategories": [],
-        "currency": "EUR",
-        "materials": [
-            "beads",
             "silver"
         ],
         "weight": 0.1,
         "ratingsAverage": 4.6,
-        "ratingsQuantity": 12
+        "ratingsQuantity": 45
+    },
+    ,
+    {
+        "title": "Ceramic Mug",
+        "slug": "ceramic-mug",
+        "description": "A cozy hand-painted ceramic mug, perfect for your morning coffee.",
+        "quantity": 100,
+        "sold": 50,
+        "price": 14.99,
+        "priceAfterDiscount": 12.99,
+        "colors": [
+            "blue",
+            "green",
+            "yellow"
+        ],
+        "imageCover": "https://example.com/images/ceramic_mug_1.jpg",
+        "images": [
+            "https://example.com/images/ceramic_mug_1.jpg",
+            "https://example.com/images/ceramic_mug_2.jpg"
+        ],
+        "category": "6749de8cd1f5d0f1c9518a94",
+        "subcategories": [
+            "6749df7f318b6f2001861157"
+        ],
+        "currency": "USD",
+        "materials": [
+            "ceramic"
+        ],
+        "weight": 0.25,
+        "ratingsAverage": 4.7,
+        "ratingsQuantity": 25
     },
     {
-        "title": "Cotton Tote Bag",
-        "slug": "cotton-tote-bag",
-        "description": "An eco-friendly tote bag perfect for shopping and daily use.",
-        "quantity": 70,
-        "sold": 18,
-        "price": 15.0,
-        "priceAfterDiscount": 12.0,
+        "title": "Wooden Board",
+        "slug": "wooden-board",
+        "description": "A high-quality wooden cutting board for all your kitchen needs. Ideal for chopping and preparing meals.",
+        "quantity": 85,
+        "sold": 40,
+        "price": 27.50,
+        "priceAfterDiscount": 24.00,
         "colors": [
-            "white",
-            "black"
+            "brown",
+            "natural wood"
         ],
-        "imageCover": "https://example.com/images/cotton-tote-bag.jpg",
-        "images": [],
-        "category": "64b62a539b5c1f0023c56799",
-        "subcategories": [],
-        "currency": "EGP",
+        "imageCover": "https://example.com/images/wooden_cutting_board_1.jpg",
+        "images": [
+            "https://example.com/images/wooden_cutting_board_1.jpg",
+            "https://example.com/images/wooden_cutting_board_2.jpg"
+        ],
+        "category": "6749de8cd1f5d0f1c9518a94",
+        "subcategories": [
+            "6749df7f318b6f2001861157"
+        ],
+        "currency": "USD",
         "materials": [
-            "cotton"
+            "wood"
         ],
-        "weight": 0.4,
-        "ratingsAverage": 4.6,
-        "ratingsQuantity": 22
+        "weight": 1.0,
+        "ratingsAverage": 4.8,
+        "ratingsQuantity": 35
+    },
+    {
+        "title": "Beaded Necklace",
+        "slug": "beaded-necklace",
+        "description": "A beautiful handmade beaded necklace, perfect for adding a touch of elegance to your outfit.",
+        "quantity": 150,
+        "sold": 75,
+        "price": 20.00,
+        "priceAfterDiscount": 18.00,
+        "colors": [
+            "gold",
+            "silver",
+            "red"
+        ],
+        "imageCover": "https://example.com/images/beaded_necklace_1.jpg",
+        "images": [
+            "https://example.com/images/beaded_necklace_1.jpg",
+            "https://example.com/images/beaded_necklace_2.jpg"
+        ],
+        "category": "6749de8cd1f5d0f1c9518a94",
+        "subcategories": [
+            "6749df7f318b6f2001861157"
+        ],
+        "currency": "USD",
+        "materials": [
+            "beads",
+            "gold"
+        ],
+        "weight": 0.05,
+        "ratingsAverage": 4.4,
+        "ratingsQuantity": 40
     }
 ]
