@@ -24,7 +24,7 @@ const router = express.Router();
 
 router.use("/:productId/reviews", reviewRouter);
 
-router.route("/most-popular").get(aliasTopProducts, getProducts);
+router.route("/top-rated").get(aliasTopProducts, getProducts);
 
 router
   .route("/")
