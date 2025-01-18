@@ -7,6 +7,8 @@ const {
   updateUser,
   getMe,
   updateMe,
+  uploadUserPhoto,
+  resizeUserPhoto,
 } = require("../controller/userController");
 
 const {
@@ -20,11 +22,14 @@ const {
   restrictTo,
 } = require("../controller/authController");
 
+const {} = require("../middlewares/uploadImageMW");
+
 const {
   getUserValidator,
   createUserValidator,
   deleteUserValidator,
   updateUserValidator,
+  updateMeValidator,
 } = require("../utils/validators/userValidator");
 
 const {
@@ -45,7 +50,13 @@ router.patch("/updateMyPassword/:id", updatePassword);
 
 router.get("/me", getMe, getUser);
 
-router.patch("/updateMe", updateMe);
+router.patch(
+  "/updateMe",
+  uploadUserPhoto,
+  resizeUserPhoto,
+  updateMeValidator,
+  updateMe
+);
 router.delete("/deleteMe", deleteMe);
 
 router.use(restrictTo("admin"));

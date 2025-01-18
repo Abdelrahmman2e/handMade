@@ -8,6 +8,8 @@ const {
   deleteProduct,
   updateProduct,
   aliasTopProducts,
+  uploadProductImages,
+  resizeProductImages,
 } = require("../controller/productController");
 
 const {
@@ -16,11 +18,10 @@ const {
   updateProductValidator,
   createProductValidator,
 } = require("../utils/validators/productValidator");
+
 const { protect, restrictTo } = require("../controller/authController");
 
 const router = express.Router();
-
-// GET    /products/jkshjhsdjh2332n/reviews/87487sfww3
 
 router.use("/:productId/reviews", reviewRouter);
 
@@ -30,9 +31,10 @@ router
   .route("/")
   .get(getProducts)
   .post(
-    createProductValidator,
     protect,
     restrictTo("admin", "artisan"),
+    uploadProductImages,
+    createProductValidator,
     createProduct
   );
 
@@ -43,6 +45,8 @@ router
     updateProductValidator,
     protect,
     restrictTo("admin", "artisan"),
+    uploadProductImages,
+    resizeProductImages,
     updateProduct
   )
   .delete(

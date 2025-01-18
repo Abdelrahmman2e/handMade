@@ -36,7 +36,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    profile_picture: String,
+    profile_picture: {
+      type: String,
+      default: "default.jpg",
+    },
     Phone: String,
     birthDate: Date,
 

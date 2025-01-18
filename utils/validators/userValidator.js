@@ -37,7 +37,7 @@ exports.createUserValidator = [
     .withMessage("E-mail is required..!!")
     .isEmail()
     .withMessage("Invalid email format..!!"),
-  check("photo").optional(),
+  check("profile_picture").optional(),
   check("password")
     .notEmpty()
     .withMessage("Password is required..!!")
@@ -49,5 +49,28 @@ exports.createUserValidator = [
       }
       return true;
     }),
+  check("birthDate").optional().isDate().withMessage("Invalid Date Format..!!"),
+  check("Phone")
+    .optional()
+    .isMobilePhone()
+    .withMessage("Invalid phone number format..!!"),
+  validatorMW,
+];
+
+exports.updateMeValidator = [
+  check("name")
+    .optional()
+    .isLength({ min: 3 })
+    .withMessage("User name is very short..!!")
+    .isLength({ max: 32 })
+    .withMessage("User name is very long..!!")
+    .custom((val, { req }) => (req.body.slug = slugify(val))),
+  check("profile_picture").optional(),
+  check("email").optional().isEmail().withMessage("Invalid email format..!!"),
+  check("birthDate").optional().isDate().withMessage("Invalid Date Format..!!"),
+  check("Phone")
+    .optional()
+    .isMobilePhone()
+    .withMessage("Invalid phone number format..!!"),
   validatorMW,
 ];
